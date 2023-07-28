@@ -1,3 +1,4 @@
 # NexWan
 
-This webpage will fullfill the purpose of being used as kind of a personal portafilio, where i plan to upload some of the projects i've done and maybe even some stuff like music i like and that kind of stuff, i was planning on adding a blog but might be on a separate web.
+This webpage will fulfill the purpose of being used as a personal portfolio, where I plan to showcase some of the projects I've worked on, as well as share my interests, including music I enjoy. I might also consider adding a blog, which could be on a separate website. <br>
+(Still not finished, by the way.)
