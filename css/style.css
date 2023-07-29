@@ -1,8 +1,14 @@
+/* Some generic rules */
+
 html {
     margin: 0;
     padding: 0;
     display: flex;
     width: 100%;
+}
+
+*{
+    box-sizing: border-box;
 }
 
 body {
@@ -29,10 +35,120 @@ body {
     margin: 10px;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 19px;
+    font-size: 1.2rem;
     transition: .5s ease;
+    color: white;
 }
 
 .nav li.active{
     border-bottom: 2px solid black;
+}
+
+/* Main body of the page css rules */
+
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 30px;
+    height: 100vh;
+}
+
+.home{
+    width: 60vw;
+    background: white;
+    height: 70vh;
+}
+
+.about{
+    top: 10%;
+    max-width: 100%;
+    flex-direction: column;
+    overflow: scroll;
+    height: 80%;
+}
+
+.logo{
+    width: 200px;
+    border-radius: 80%;
+    border: 10px black solid;
+    background: #000;
+}
+
+.title{
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.content{
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+}
+
+.white{
+    color: white;
+}
+
+.limit{
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 10px 30px;
+    font-weight: bold;
+}
+
+ul.content{
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    align-items: center;
+}
+
+ul.content li{
+    align-items: center;
+    text-align: left;
+}
+
+.aboutList{
+    max-height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.vertical{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Particles JS rules */
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    /*background-image: url('');*/
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
 }

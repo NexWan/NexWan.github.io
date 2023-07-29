@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/fullpage.css">
+    <link href=" https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.css " rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -11,30 +11,97 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="particles-js">
+
+    </div>
     <nav class="nav">
         <a href="#section1" id="logo">
             LeonexWan
         </a>
         <ul id="menu" class="menu">
             <li data-menuanchor="section1" class="active"> 
-                <a href="#section1" id="link1">Inicio</a>
+                <a href="#section1" id="link1">Home</a>
             </li>
             <li data-menuanchor="section2"> 
-                <a href="#section2" id="link2">Sobre mi</a>
+                <a href="#section2" id="link2">About me</a>
             </li>
             <li data-menuanchor="section3"> 
-                <a href="#section3" id="link3">Proyectos</a>
+                <a href="#section3" id="link3">My work</a>
             </li>
         </ul>
     </nav>
     <main>
         <div class="fullpage" id="fullpage">
-            <div class="section" data-anchor="section1">aaaa</div>
-            <div class="section" data-anchor="section2">asdasdasdadas</div>
+            <div class="section" data-anchor="section1">
+                <div class="mainContent home">
+                    <h2 class="title">Welcome to my page!</h2>
+                    <img src="/media/index.webp" alt="" class="logo">
+                    <p class="content">
+                        My name is Leonardo! this is my web portafolio
+                    </p>
+                </div>
+            </div>
+            <div class="section" data-anchor="section2">
+                <div class="mainContent">
+                    <div class="about">
+                        <h2 class="title">Bio</h2>
+                    <p class="content white limit">
+                        My name is Leonardo, but you can call me Wan, i'm a mexican student of computer systems engineering (or cs if you prefer to call it that way),
+                        I'm currently at my third year and i'm a huge fan of computers!
+                    </p>
+                    <h2 class="title">Hobbies</h2>
+                    <div class="aboutList">
+                        <div class="list">
+                            <ul class="content white">
+                                <li>Gaming</li>
+                                <li>Programming</li>
+                                <li>Instrumental learning</li>
+                                <li>Computer building</li>
+                                <li>Game creation</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul class="content white">
+                                <li>Singing</li>
+                                <li>Listening to music</li>
+                                <li>Studying things that I <br> find amusing</li>
+                                <li>Going to the gym (sometimes)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 class="title">Skills</h2>
+                    <p class="content white limit">
+                        I do have some skills that I consider interesting, firstly my hyperfocus on things that are of my interest, i suffer from adhd so i find it kinda frustrating not being able to do things, but when i 
+                        found something interesting I tend to focus really hard on it and learn from it as much as i can!.
+                        <br>
+                        I have a very worked logical skill when it comes to mathematics, I tend to learn things pretty quickly and find the patters on numbers, it's something I find very funny to study about!.
+                        <br>
+                        I have (or at least used to) nice gaming skills, weird flex but I tend to do some nice plays on FPS games (you can check my youtube channel on the next page).
+                        <br>
+                        Some people might say that I have a very curious logic when it comes to programming, since I tend to do things on a way like my brain can handle it'll work, sometimes it can be for the best and sometimes i end up 
+                        doing lots of redundant stuff, but at the end of the day I learn from it!
+                    </p>
+                    <br>
+                    <p class="content white limit">
+                        And for the last when it comes to programming languages I have used these languages!<br>
+                        <ul class="limit white vertical">
+                            <li>Python</li>
+                            <li>Java(my beloved)</li>
+                            <li>C#</li>
+                            <li>javascript</li>
+                            <li>Sql (oracle,mysqli)</li>
+                            <li>Linux</li>
+                            <li>Some frameworks</li>
+                        </ul>
+                    </p>
+                    </div>
+                </div>
+            </div>
             <div class="section" data-anchor="section3">asdasdasdadas</div>
         </div>
+
     </main>
-    <script src="js/fullpage.js"></script>
+    <script src="/js/particles.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.js "></script>
     <script type="text/javascript" src="js/main.js"></script>
-</body>
 </html>
