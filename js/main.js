@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     })
   });
+  
 
   // Particles js config
 
