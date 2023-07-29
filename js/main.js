@@ -1,26 +1,61 @@
-// Wait for the content to be loaded, it holds the config of the fullpage library
-document.addEventListener("DOMContentLoaded", function () {
-    new fullpage("#fullpage", {
-      sectionsColor: ['none', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-      anchors: ["section1", "section2", "section3"],
-      controlArrows: false,
-      normalScrollElements: '.mainContent',
-      navigation: true,
-      slidesNavigation: true,
-      menu: '#menu',
-      afterLoad: function (origin, destination, direction) {  //This function works as the handler of the active nav, for some reason the default nav handler doesnt work for me
-        document.querySelectorAll("#menu li").forEach(function (item) {
-          item.classList.remove("active");
-        });
-        var menuItems = document.querySelectorAll("#menu li");
-        var activeMenuItem = document.querySelector(`#menu li[data-menuanchor="${destination.anchor}"]`);
-        if (activeMenuItem) {
-          activeMenuItem.classList.add("active");
-        }
-      },
-    })
+ $(() =>{
+  $('#fullpage').fullpage({
+    sectionsColor: ['none', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+    anchors: ["section1", "section2", "section3"],
+    controlArrows: false,
+    normalScrollElements: '.about',
+    navigation: true,
+    slidesNavigation: true,
+    menu: '#menu',
+    scrollHorizontally: true,
+    afterLoad: function (origin, destination, direction) {
+      $("#menu li").removeClass("active"); // Remove "active" class from all menu items
+      var activeMenuItem = $(`#menu li[data-menuanchor="${destination.anchor}"]`);
+      if (activeMenuItem.length) {
+        activeMenuItem.addClass("active"); // Add "active" class to the matching menu item
+      }
+    },
   });
+
+  function autoSlide() {
+    const slides = $('.slider-nav a');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.eq(currentIndex).removeClass('active');
+        currentIndex = index % slides.length;
+        slides.eq(currentIndex).addClass('active');
+
+        // Scroll to the selected slide (assuming each slide is 100% width)
+        const slider = $('.slider');
+        slider.scrollLeft(currentIndex * slider.width());
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // Start sliding automatically (change the interval duration as per your preference)
+    setInterval(nextSlide, 4000); // 5000ms = 5 seconds
+
+    $('.slider-arrow-right').click(function () {
+      console.log('ola');
+      $.fn.fullpage.moveSlideRight();
+  });
+
+  // Move to the previous slide when clicking the left arrow
+  $('.slider-arrow-left').click(function () {
+      $.fn.fullpage.moveSlideLeft();
+  });
+}
+
+// Call the autoSlide function when the page has loaded
+autoSlide();
+
+  })
+
   
+
 
   // Particles js config
 

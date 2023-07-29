@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href=" https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.css " rel="stylesheet">
+    <!-- <link href=" https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.css " rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -97,18 +99,68 @@
                 </div>
             </div>
             <div class="section" data-anchor="section3">
-                <div class="mainContent">
-                    <h2 class="title">
-                        Currently in progress
-                    </h2>
-                    <img src="/media/index.webp" alt="" class="logo">
+                <div class="slider-arrows">
+                    <button class="slider-arrow-left" id="left">&#8249;</button>
+                    <button class="slider-arrow-right" id="right">&#8250;</button>
+                </div>
+                <div class="slide">
+                    <div class="mainContent">
+                        <div class="projects">
+                            <h2 class="title">
+                                Database manager project
+                            </h2>
+                            <p class="content white limit">
+                                This project consists of the creation of a database system in Oracle which needs to be controlled directly from a programming language (Java) using technologies like JavaFX, JDBC, Oracle SQL Developer, etc.
+                                You can see full details on the <a href="https://github.com/NexWan/Proyecto-Bases-de-Datos">Github repo</a>.
+                            </p>
+                            <img src="/media/dataproject.png" alt="" class="projectImgs">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="mainContent">
+                        <div class="projects">
+                            <h2 class="title">Chase a rooster, a 3D game</h2>
+                            <p class="content white limit">
+                                Chase a rooster is a 3D game created with the game engine Unity. It consists of chasing some rooster around the map that can move freely with the help of AI integrated into the Unity tool.
+                                It was the final project of my graphics signature.
+                            </p>
+                            <section class="container">
+                                <div class="slider-wrapper">
+                                    <div class="slider">
+                                        <img src="media/rooster1.png" alt="" id="slide-1">
+                                        <img src="media/rooster2.png" alt="" id="slide-2">
+                                        <img src="media/rooster3.png" alt="" id="slide-3">
+                                        <img src="media/rooster4.png" alt="" id="slide-4">
+                                    </div>
+                                    <div class="slider-nav">
+                                        <a href="#slide-1"></a>
+                                        <a href="#slide-2"></a>
+                                        <a href="#slide-3"></a>
+                                        <a href="#slide-4"></a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slide">
+                    <div class="mainContent">
+                        <h2 class="title">
+                            Currently in progress
+                        </h2>
+                        <img src="/media/index.webp" alt="" class="logo">
+                    </div>
                 </div>
             </div>
+            
         </div>
 
     </main>
     <script src="/js/particles.js"></script>
-    <script src=" https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.js "></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- <script src=" https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.js "></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js" integrity="sha512-XOpdFagEEv9XMxN/2EdvFL/PfGtFDjX+AkRznsFHDtdC05YWdkMnz5JZUfrbnEabOQaMc7YNTl2xPbOu3J858Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </html>
