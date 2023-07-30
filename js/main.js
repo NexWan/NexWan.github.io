@@ -5,7 +5,7 @@ $(() => {
     sectionsColor: ["none", "#4BBFC3", "#7BAABE", "grey", "#000"],
     anchors: ["section1", "section2", "section3","section4"],
     controlArrows: false,
-    normalScrollElements: ".about",
+    normalScrollElements: ".about, .projects",
     navigation: true,
     slidesNavigation: true,
     menu: "#menu",

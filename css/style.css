@@ -136,6 +136,22 @@ ul.content li{
     justify-content: space-around;
 }
 
+.projects{
+    top: 10%;
+    max-width: 80vw;
+    overflow-y: scroll;
+    height: 80%;
+    z-index: 9999;
+}
+
+.projectImgs{
+    max-width: 900px;
+    max-height: 500px;
+    border-radius: 30px;
+    box-shadow: 0px 22px 6px 6px rgba(0,0,0,0.1);
+}
+
+
 /* #skills br{
     margin:0.8em 0;
     line-height:0.8em;
@@ -166,18 +182,6 @@ div.fp-slidesNav.bottom {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.projects{
-    max-width: 80%;
-    overflow-y: hidden;
-}
-
-.projectImgs{
-    max-width: 900px;
-    max-height: 500px;
-    border-radius: 30px;
-    box-shadow: 0px 22px 6px 6px rgba(0,0,0,0.1);
 }
 
 
@@ -211,42 +215,32 @@ div.fp-slidesNav.bottom {
     object-fit: fill;
 }
 
-.slider-arrows {
+.slider-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;
-    width: 100%;
-    padding: 2%;
-    justify-content: space-between;
-    z-index: 9999;
-}
-
-.slider-arrows button {
     font-size: 2rem;
     background: rgba(0, 0, 0, 0.5);
     border: none;
     cursor: pointer;
-    margin: 0 10px;
     color: white;
     padding: 10px 15px;
     border-radius: 50%;
     z-index: 9999;
-}
-
-.slider-arrow-left,
-.slider-arrow-right {
-    font-size: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 0 10px;
-    color: white;
-    transition: transform 0.3s ease; /* Add a smooth transition */
-}
-
-/* Hover effect */
-.slider-arrow-left:hover,
-.slider-arrow-right:hover {
-    transform: scale(1.2); /* Apply a slight scale effect on hover */
-}
+    transition: transform 0.3s ease, border 0.3s ease; /* Add a smooth transition for both transform and border */
+    border: 2px solid transparent; /* Add a transparent border */
+  }
+  
+  .slider-arrow-left {
+    left: 3%; /* Add left padding of 1% */
+  }
+  
+  .slider-arrow-right {
+    right:3%; /* Add right padding of 1% */
+  }
+  
+  /* Hover effect */
+  .slider-arrow:hover {
+    transform: scale(1.2) translateY(-50%); /* Apply a slight scale effect on hover and re-center vertically */
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Show the border on hover */
+  }
