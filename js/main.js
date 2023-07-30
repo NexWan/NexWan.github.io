@@ -1,3 +1,5 @@
+var currentSlide;
+var keepRunning;
 $(() => {
   $("#fullpage").fullpage({
     sectionsColor: ["none", "#4BBFC3", "#7BAABE", "whitesmoke", "#000"],
@@ -9,13 +11,26 @@ $(() => {
     menu: "#menu",
     scrollHorizontally: true,
     afterSlideLoad: function(section,origin,destination,direction,trigger){
-      autoSlide(getActiveSlide());
+      currentSlide = getActiveSlide();
+      if (typeof currentSlide !== "undefined") {
+        keepRunning = true;
+        autoSlide(currentSlide);
+      }
     },
+    onSlideLeave: function (section, origin, destination, direction, trigger){
+      if (typeof currentSlide !== 'undefined') {
+        keepRunning = false;
+        currentSlide.removeClass("active");
+        currentSlide.eq(0).addClass("active");
+        clearInterval(slideInterval); // Stop the interval when leaving the slide
+      }
+    }
   });
+
+  let slideInterval;
 
   function autoSlide(slideSlides) {
     const slides = slideSlides;
-    console.log(slides);
     let currentIndex = 0;
 
     function showSlide(index) {
@@ -32,8 +47,11 @@ $(() => {
       showSlide(currentIndex + 1);
     }
 
+    // Clear the previous interval, if any
+    clearInterval(slideInterval);
+
     // Start sliding automatically (change the interval duration as per your preference)
-    setInterval(nextSlide, 4000); // 5000ms = 5 seconds
+    slideInterval = setInterval(nextSlide, 4000); // 4000ms = 4 seconds
   }
 
   $(".slider-arrow-right").click(function () {
