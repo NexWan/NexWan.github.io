@@ -91,7 +91,7 @@ body {
 
 .content{
     text-align: justify;
-    text-justify: inter-word;
+    text-justify: auto;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
 }
@@ -99,6 +99,7 @@ body {
 .white{
     color: white;
 }
+
 
 .limit{
     max-width: 1200px;
@@ -134,6 +135,11 @@ ul.content li{
     display: flex;
     justify-content: space-around;
 }
+
+/* #skills br{
+    margin:0.8em 0;
+    line-height:0.8em;
+} */
 
 /* Particles JS rules */
 
@@ -174,7 +180,8 @@ div.fp-slidesNav.bottom {
     box-shadow: 0px 22px 6px 6px rgba(0,0,0,0.1);
 }
 
-/* Adjust the slider container */
+
+/*  slider stuff */
 .container{
     padding: 2rem;
 }
