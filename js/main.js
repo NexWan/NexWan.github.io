@@ -2,8 +2,8 @@ var currentSlide;
 var keepRunning;
 $(() => {
   $("#fullpage").fullpage({
-    sectionsColor: ["none", "#4BBFC3", "#7BAABE", "whitesmoke", "#000"],
-    anchors: ["section1", "section2", "section3"],
+    sectionsColor: ["none", "#4BBFC3", "#7BAABE", "grey", "#000"],
+    anchors: ["section1", "section2", "section3","section4"],
     controlArrows: false,
     normalScrollElements: ".about",
     navigation: true,
