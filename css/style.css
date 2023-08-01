@@ -151,6 +151,65 @@ ul.content li{
     box-shadow: 0px 22px 6px 6px rgba(0,0,0,0.1);
 }
 
+.socials{
+    top: 10%;
+    width: 80vw;
+    overflow-y: 80%;
+    height: 80%;
+    background: white;
+    border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    -ms-border-radius: 1.5em;
+    -o-border-radius: 1.5em;
+}
+
+/* .socialContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    top: 50%;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+} */
+
+/* /* .socialDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+    overflow: hidden;
+}
+
+.socialDiv img {
+    height: 50px;
+    transition: height ease 0.3s;
+}
+
+.socialDiv img:hover {
+    height: 60px;
+
+}
+
+.socialDiv .content{
+    margin: 0;
+}
+
+.center{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+} */
+
 
 /* #skills br{
     margin:0.8em 0;
@@ -168,7 +227,6 @@ ul.content li{
     background-position: 50% 50%;
     background-repeat: no-repeat;
     position: absolute;
-    
 }
 
 canvas {
@@ -244,3 +302,95 @@ div.fp-slidesNav.bottom {
     transform: scale(1.2) translateY(-50%); /* Apply a slight scale effect on hover and re-center vertically */
     border: 2px solid rgba(0, 0, 0, 0.5); /* Show the border on hover */
   }
+
+
+@media(max-width: 768px){
+    div#particles-js{
+        display: none;
+    }
+
+    [data-anchor="section1"]{
+        background: grey;
+    }
+
+    a#logo{
+        font-size: 0.5em;
+    }
+
+    .menu li{
+        margin: auto;
+        font-size: 15px;
+    }
+
+    .menu li a{
+        font-size: 0.6em;
+    }
+
+    .mainContent.home{
+        height: auto;
+        padding: 20px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .content{
+        font-size: 10px;
+    }
+
+    .home img{
+        width: 100px;
+    }
+
+    ul.limit{
+        font-size: 10px;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0 30px;
+    }
+
+    ul.limit li{
+        margin: 5px;
+    }
+
+    .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        cursor: pointer;
+        color: white;
+        padding: 3px 6px;
+        border-radius: 50%;
+        z-index: 9999;
+        transition: transform 0.3s ease, border 0.3s ease; /* Add a smooth transition for both transform and border */
+        border: 2px solid transparent; /* Add a transparent border */
+      }
+      
+      .slider-arrow-left {
+        left: 0%; /* Add left padding of 1% */
+      }
+      
+      .slider-arrow-right {
+        right:0%; /* Add right padding of 1% */
+      }
+      
+      /* Hover effect */
+      .slider-arrow:hover {
+        transform: scale(1.2) translateY(-50%); /* Apply a slight scale effect on hover and re-center vertically */
+        border: 2px solid rgba(0, 0, 0, 0.5); /* Show the border on hover */
+      }
+
+      .slider img{
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: fill;
+    }
+
+    .projectImgs{
+        width: 250px;
+    }
+}
