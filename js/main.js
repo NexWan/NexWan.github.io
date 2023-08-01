@@ -9,6 +9,7 @@ $(() => {
     navigation: true,
     slidesNavigation: true,
     menu: "#menu",
+    dragAndMove: true,
     scrollHorizontally: true,
     afterSlideLoad: function(section,origin,destination,direction,trigger){
       currentSlide = getActiveSlide();
