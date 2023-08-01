@@ -326,6 +326,11 @@ div.fp-slidesNav.bottom {
         font-size: 0.6em;
     }
 
+    .mainContent{
+        height: 70%;
+        width: 90%;
+    }
+
     .mainContent.home{
         height: auto;
         padding: 20px;
