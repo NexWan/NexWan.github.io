@@ -327,7 +327,7 @@ div.fp-slidesNav.bottom {
     }
 
     .mainContent{
-        height: 70%;
+        max-height: 70%;
         width: 90%;
     }
 
@@ -346,6 +346,10 @@ div.fp-slidesNav.bottom {
 
     .home img{
         width: 100px;
+    }
+
+    .about{
+        max-height: 70%;
     }
 
     ul.limit{
