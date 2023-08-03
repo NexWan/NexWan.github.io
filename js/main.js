@@ -1,24 +1,27 @@
 var currentSlide;
 var keepRunning;
-$(() => {
-  $("#fullpage").fullpage({
+var slides;
+var currentIndex;
+var slideInterval;
+ $(() => {
+  var fullpageOptions = {
     sectionsColor: ["none", "#4BBFC3", "#7BAABE", "grey", "#000"],
-    anchors: ["section1", "section2", "section3","section4"],
+    anchors: ["section1", "section2", "section3", "section4"],
     controlArrows: false,
-    normalScrollElements: ".about, .projects",
+    normalScrollElements: ".about, .projects, .socials",
     navigation: true,
     slidesNavigation: true,
     menu: "#menu",
     dragAndMove: true,
     scrollHorizontally: true,
-    afterSlideLoad: function(section,origin,destination,direction,trigger){
+    afterSlideLoad: function(section, origin, destination, direction, trigger) {
       currentSlide = getActiveSlide();
       if (typeof currentSlide !== "undefined") {
         keepRunning = true;
         autoSlide(currentSlide);
       }
     },
-    onSlideLeave: function (section, origin, destination, direction, trigger){
+    onSlideLeave: function(section, origin, destination, direction, trigger) {
       if (typeof currentSlide !== 'undefined') {
         keepRunning = false;
         currentSlide.removeClass("active");
@@ -26,65 +29,42 @@ $(() => {
         clearInterval(slideInterval); // Stop the interval when leaving the slide
       }
     }
-  });
-
-  let slideInterval;
-
-  function autoSlide(slideSlides) {
-    const slides = slideSlides;
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      slides.eq(currentIndex).removeClass("active");
-      currentIndex = index % slides.length;
-      slides.eq(currentIndex).addClass("active");
-
-      // Scroll to the selected slide (assuming each slide is 100% width)
-      const slider = $(".slider");
-      slider.scrollLeft(currentIndex * slider.width());
-    }
-
-    function nextSlide() {
-      showSlide(currentIndex + 1);
-    }
-
-    // Clear the previous interval, if any
-    clearInterval(slideInterval);
-
-    // Start sliding automatically (change the interval duration as per your preference)
-    slideInterval = setInterval(nextSlide, 4000); // 4000ms = 4 seconds
-  }
-
-  $(".slider-arrow-right").click(function () {
+  };
+   $("#fullpage").fullpage(fullpageOptions);
+   $(".slider-arrow-right").click(function() {
     $.fn.fullpage.moveSlideRight();
   });
-
-  // Move to the previous slide when clicking the left arrow
-  $(".slider-arrow-left").click(function () {
+   $(".slider-arrow-left").click(function() {
     $.fn.fullpage.moveSlideLeft();
   });
-
-  function getActiveSlide() {
+   function getActiveSlide() {
     var active = $(".slide.fp-slide.fp-table.active")[0]; //Gets the active slide
-    let getContainer = active.children[0].children[0].children[0].children; //i know it seems weird, but fullpage just adds like 10 divs
-    let containerObj = $(getContainer); //Converts to a jquery object
-    let hasContainer = false;
-    let navObjects;
-    containerObj.each(function () {
-      if ($(this).hasClass("container")) { //Checks for the container class (means that there is a slider in the object)
-        hasContainer = true;
-        navObjects = $(this); //Convert this element to a jquery object
-        return false; //Breaks each cycle
-      }
-    });
-    if (hasContainer) {
-      let navs = $(navObjects.contents()[1]).contents()[3]; // Get (once again) inner children of the object to find the one where the nav list is stored
-      let navObj = $(navs).find("a");
+    var containerObj = $(active).find(".container"); // Finds the container element within the active slide
+    if (containerObj.length > 0) {
+      var navObj = containerObj.find("a"); // Finds the navigation links within the container
       return navObj;
     }
   }
+   function autoSlide(slideSlides) {
+    slides = slideSlides;
+    currentIndex = 0;
+     function showSlide(index) {
+      slides.removeClass("active");
+      currentIndex = index % slides.length;
+      slides.eq(currentIndex).addClass("active");
+       // Scroll to the selected slide (assuming each slide is 100% width)
+      const slider = $(".slider");
+      slider.animate({ scrollLeft: currentIndex * slider.width() }, 500); // Use CSS transitions for smoother scrolling
+    }
+     // Clear the previous interval, if any
+    clearInterval(slideInterval);
+     // Start sliding automatically (change the interval duration as per your preference)
+    slideInterval = setInterval(nextSlide, 4000); // 4000ms = 4 seconds
+     function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+  }
 });
-
 // Particles js config
 
 /* -----------------------------------------------

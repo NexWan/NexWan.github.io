@@ -154,7 +154,7 @@ ul.content li{
 .socials{
     top: 10%;
     width: 80vw;
-    overflow-y: 80%;
+    overflow-y: scroll;
     height: 80%;
     background: white;
     border-radius: 1.5em;
@@ -164,7 +164,7 @@ ul.content li{
     -o-border-radius: 1.5em;
 }
 
-/* .socialContainer {
+.socialContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,22 +172,18 @@ ul.content li{
     text-align: center;
     margin: auto;
     top: 50%;
-    transform: translateY(100%);
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    -o-transform: translateY(100%);
-} */
+}
 
-/* /* .socialDiv {
+.socialDiv {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    margin: 30px;
+    margin: 1ch;
     overflow: hidden;
+    padding: 30PX;
 }
 
 .socialDiv img {
@@ -197,7 +193,6 @@ ul.content li{
 
 .socialDiv img:hover {
     height: 60px;
-
 }
 
 .socialDiv .content{
@@ -208,7 +203,43 @@ ul.content li{
     margin: auto;
     text-align: center;
     width: 100%;
-} */
+}
+
+.socialBlock{
+    text-align: center;
+    width: 40%;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    box-shadow: 0px 18px 5px 0px rgba(0,0,0,0.1);
+}
+
+#github{
+    background: grey;
+}
+
+#instagram{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+#discord{
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+#twitter{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+#youtube{
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
 
 
 /* #skills br{
