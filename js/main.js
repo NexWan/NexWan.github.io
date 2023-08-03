@@ -27,9 +27,13 @@ var slideInterval;
         currentSlide.removeClass("active");
         currentSlide.eq(0).addClass("active");
         clearInterval(slideInterval); // Stop the interval when leaving the slide
+
+        const slider = $(".slider");
+        slider.animate({ scrollLeft: 0 }, 500); // Assuming each slide is 100% width
       }
     }
   };
+
    $("#fullpage").fullpage(fullpageOptions);
    $(".slider-arrow-right").click(function() {
     $.fn.fullpage.moveSlideRight();
@@ -37,6 +41,7 @@ var slideInterval;
    $(".slider-arrow-left").click(function() {
     $.fn.fullpage.moveSlideLeft();
   });
+
    function getActiveSlide() {
     var active = $(".slide.fp-slide.fp-table.active")[0]; //Gets the active slide
     var containerObj = $(active).find(".container"); // Finds the container element within the active slide
@@ -45,6 +50,7 @@ var slideInterval;
       return navObj;
     }
   }
+
    function autoSlide(slideSlides) {
     slides = slideSlides;
     currentIndex = 0;
